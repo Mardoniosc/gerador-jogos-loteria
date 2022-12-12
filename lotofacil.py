@@ -16,8 +16,9 @@
 
 from random import sample
 import requests 
+from auxFunc import resultado_lista_inteiro, compara_resultado, valida_sequencia
 
-API_URL = 'https://api-loteria.servicosmsc.com.br/api/lotofacil/latest'
+API_URL = 'https://api-loteria.servicosmsc.com.br/api/lotofacil'
 
 # GERA O JOGO SEM NENHUM TIPO DE REGRA
 def lotofacil_aleatorio():
@@ -26,9 +27,10 @@ def lotofacil_aleatorio():
   jogo = { 'Jogo' : sorted(jogo)}
   return jogo
 
+# GERAR JOGO COM BASE NO ULTIMO RESULTADO
 def lotofacil_base_ultimo():
   lotofacil = list(range(1, 26))
-  response_API = requests.get(API_URL)
+  response_API = requests.get(API_URL + '/latest')
   response = response_API.json()
   ultimo_resultado = response['dezenas']
   ultimo_resultado = list(map(int, ultimo_resultado))
@@ -57,3 +59,19 @@ def lotofacil_base_ultimo():
   }
 
   return json_response
+
+def lotofacil_nao_sorteado():
+  response_API = requests.get(API_URL)
+  response = response_API.json()
+
+  pode_jogar = True
+  while(pode_jogar):
+    jogo = lotofacil_aleatorio()
+    jogo = jogo['Jogo']
+    for resultado in response:
+      resultado_lista = resultado_lista_inteiro(resultado['dezenas'])
+      jogo2 = resultado_lista_inteiro(resultado_lista)
+      if(valida_sequencia(jogo) == False):
+        if (compara_resultado(jogo, jogo2) != 15):
+          pode_jogar = False
+          return { 'Jogo' : str(sorted(jogo))}

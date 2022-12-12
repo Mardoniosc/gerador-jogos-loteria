@@ -16,7 +16,7 @@
 
 from flask import Flask, jsonify
 
-from lotofacil import lotofacil_aleatorio, lotofacil_base_ultimo
+from lotofacil import lotofacil_aleatorio, lotofacil_base_ultimo, lotofacil_nao_sorteado
 from megasena import mega_aleatorio, mega_duque
 from duplasena import duplasena_aleatorio
 from lotomania import lotomania_aleatorio
@@ -38,6 +38,11 @@ def aleatorio_lotofacil():
 @app.route('/lotofacil/base/ultimo')
 def base_ultimo():
   response = lotofacil_base_ultimo()
+  return jsonify(response), 200
+
+@app.route('/lotofacil/nao-sorteado')
+def nao_sorteado():
+  response = lotofacil_nao_sorteado()
   return jsonify(response), 200
 
 # JOGOS MEGA SENA

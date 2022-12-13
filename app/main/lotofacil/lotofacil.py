@@ -1,22 +1,6 @@
-# coding: utf-8
-
-"""
-    .NOTES
-    ===========================================================================
-    Created with:   VSCode Classic v1.73.0
-    Created on:   	12/12/2022
-    Created by:   	Mardonio Silva da Costa
-    Filename:     	lotofacil.py
-    ===========================================================================
-    .DESCRIPTION
-      Responsavel pela criação de jogos da lotofacil
-    .UPDATES
-      00/00/2022 - Mardonio - 
-"""
-
 from random import sample
 import requests 
-from auxFunc import resultado_lista_inteiro, compara_resultado, valida_sequencia
+from app.utils.auxFunc import resultado_lista_inteiro, compara_resultado, valida_sequencia
 
 API_URL = 'https://api-loteria.servicosmsc.com.br/api/lotofacil'
 
@@ -74,4 +58,4 @@ def lotofacil_nao_sorteado():
       if(valida_sequencia(jogo) == False):
         if (compara_resultado(jogo, jogo2) != 15):
           pode_jogar = False
-          return { 'Jogo' : str(sorted(jogo))}
+          return { 'Jogo' : sorted(jogo)}

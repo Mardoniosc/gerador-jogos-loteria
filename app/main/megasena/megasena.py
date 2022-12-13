@@ -1,28 +1,12 @@
-# coding: utf-8
-
-"""
-    .NOTES
-    ===========================================================================
-    Created with:   VSCode Classic v1.73.0
-    Created on:   	12/12/2022
-    Created by:   	Mardonio Silva da Costa
-    Filename:     	megasena.py
-    ===========================================================================
-    .DESCRIPTION
-      Responsavel pela criação de jogos da megasena
-    .UPDATES
-      00/00/2022 - Mardonio - 
-"""
-
 from random import sample
 
-def mega_aleatorio():
+def megasena_aleatorio():
   numeros = list(range(1, 61))
   jogo =  sample(numeros, 6)
   jogo = { 'Jogo' : sorted(jogo)}
   return jogo
 
-def mega_duque():
+def megasena_duque():
   numeros_baixos = [1,2,3,4,5,6,7,8,9]
   duque = [30,31,32,33,34,35,36,37,38,39]
   numeros_altos = [51,52,53,54,55,56,57,58,59,60]

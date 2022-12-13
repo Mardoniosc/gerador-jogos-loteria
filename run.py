@@ -6,10 +6,11 @@
     Created with:   VSCode Classic v1.73.0
     Created on:   	12/12/2022
     Created by:   	Mardonio Silva da Costa
-    Filename:     	run.py
+    Sistema:       	Sistema Gerador de Jogos de loteria
+    version:        1.0.0
     ===========================================================================
     .DESCRIPTION
-      Responsavel pela execução do projeto principal
+      Responsavel pela Geração de jogos da loteria
     .UPDATES
       00/00/2022 - Mardonio - 
 """

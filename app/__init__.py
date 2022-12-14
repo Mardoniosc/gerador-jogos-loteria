@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, url_for
 from flask_restplus import Api
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -22,7 +22,12 @@ authorizations = {
     }
 }
 
-api = Api(app, title='Api Geradora de jogos de loteria', version='1.0.0', description='Api feita para padronização de geração de jogos',prefix='/api', authorizations=authorizations)
+class PatchedApi(Api):
+    @property
+    def specs_url(self):
+        return url_for(self.endpoint('specs'), _external=False)
+
+api = PatchedApi(app, title='Api Geradora de jogos de loteria', version='1.0.0', description='Api feita para padronização de geração de jogos',prefix='/api', authorizations=authorizations)
 
 api.add_namespace(duplasena_ns, path='/duplasena')
 api.add_namespace(lotofacil_ns, path='/lotofacil')

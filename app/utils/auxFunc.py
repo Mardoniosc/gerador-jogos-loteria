@@ -1,18 +1,3 @@
-# coding: utf-8
-
-"""
-    .NOTES
-    ===========================================================================
-    Created with:   VSCode Classic v1.73.0
-    Created on:   	12/12/2022
-    Created by:   	Mardonio Silva da Costa
-    Filename:     	auxFunc.py
-    ===========================================================================
-    .DESCRIPTION
-      Funções auxiliares na criação/validação de jogos
-    .UPDATES
-      00/00/2022 - Mardonio - 
-"""
 def resultado_lista_inteiro(jogo):
     jogo = list(map(int, jogo))
     return jogo

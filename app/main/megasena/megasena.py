@@ -64,7 +64,9 @@ def fechamento(item):
       jogoIndex = list(map(int, x.split(",")))
       for i in jogoIndex:
         jogoFechamento.append(numeros[i])
-      jogos.append(jogoFechamento)
+      jogos.append(sorted(jogoFechamento))
     fd.close()
   
-  return {'Jogos': jogos }
+  response = { 'Total': len(jogos), 'Jogos': jogos }
+
+  return response

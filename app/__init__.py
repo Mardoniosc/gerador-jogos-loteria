@@ -27,7 +27,12 @@ class PatchedApi(Api):
     def specs_url(self):
         return url_for(self.endpoint('specs'), _external=False)
 
-api = PatchedApi(app, title='Api Geradora de jogos de loteria', version='1.0.0', description='Api feita para padronização de geração de jogos',prefix='/api', authorizations=authorizations)
+api = PatchedApi(app, 
+    title='Api Geradora de jogos de loteria', 
+    version='1.0.0', 
+    description='Api feita para padronização de geração de jogos',
+    prefix='/api', 
+    authorizations=authorizations)
 
 api.add_namespace(duplasena_ns, path='/duplasena')
 api.add_namespace(lotofacil_ns, path='/lotofacil')

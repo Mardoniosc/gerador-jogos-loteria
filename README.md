@@ -1,8 +1,6 @@
 # API GERAÇÃO DE JOGOS
 Api publica desenvolvida para geração de jogos de forma mais inteligente
 
-define('VERSAO','1.0.1')
-
 ## DESENVOLVIMENTO / DÍSPONIVEL
 
 ### JOGOS ALEATORIOS

@@ -14,7 +14,8 @@ megasenaAleatorio = Regra('MegaSena Aleatória', 'Números sorteados gerados atr
 quinaAleatorio = Regra('Quina Aleatória', 'Números sorteados gerados através do algoritimo(random.sample)')
 
 
-
+# MEGA SENA
+megasenaDuque = Regra('MegaSena Aleatória', '* 1 Numero baixo (1 e 10) * 1 Numero alto (51 e 60) * 2 Numero de trinta (30 e 39) * 2 Numero de aleatorios')
 
 def regras_aleatorio():
   listaRegrasAleatorios = []
@@ -24,6 +25,7 @@ def regras_aleatorio():
   listaRegrasAleatorios.append(megasenaAleatorio.regraObjeto())
   listaRegrasAleatorios.append(quinaAleatorio.regraObjeto())
   jogo = { 'Regras' : {
-    'Aleatorios': listaRegrasAleatorios
+    'Aleatorios': listaRegrasAleatorios,
+    'Mega Sena Duque': megasenaDuque.regraObjeto()
   }}
   return jogo

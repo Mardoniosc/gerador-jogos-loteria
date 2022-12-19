@@ -20,10 +20,15 @@ class MegasenaDuqueController(Resource):
 
 
 argumentos = api.parser()
-argumentos.add_argument('total_numeros_fechamento', choices=[12], default=12, required=True)
-argumentos.add_argument('para_acertar', choices=[4,5,6], default=4, required=True)
-argumentos.add_argument('geracao_numeros', choices=['ALEATORIO', 'DUQUE', 'ESCOLHER_NUMEROS'], required=True, dest='Tipos de números para fechamento', default='ALEATORIO')
-argumentos.add_argument('numeros_fechamento', type=str, dest='Informar os numeros separados por virgula', default='0,1,2')
+argumentos.add_argument('total_numeros_fechamento', choices=[
+                        12], default=12, required=True)
+argumentos.add_argument('para_acertar', choices=[
+                        4, 5, 6], default=4, required=True)
+argumentos.add_argument('geracao_numeros', choices=[
+                        'ALEATORIO', 'DUQUE', 'ESCOLHER_NUMEROS'], required=True, dest='Tipos de números para fechamento', default='ALEATORIO')
+argumentos.add_argument('numeros_fechamento', type=str,
+                        dest='Informar os numeros separados por virgula', default='0,1,2')
+
 
 @api.route('/fechamento')
 class MegasenaFechamentoController(Resource):

@@ -4,16 +4,12 @@ from app.utils.auxFunc import resultado_lista_inteiro, compara_resultado, valida
 
 API_URL = 'https://api-loteria.servicosmsc.com.br/api/lotofacil'
 
-# GERA O JOGO SEM NENHUM TIPO DE REGRA
-
 
 def lotofacil_aleatorio():
     numeros = list(range(1, 26))
     jogo = sample(numeros, 15)
     jogo = {'Jogo': sorted(jogo)}
     return jogo
-
-# GERAR JOGO COM BASE NO ULTIMO RESULTADO
 
 
 def lotofacil_base_ultimo():
@@ -96,6 +92,6 @@ def fechamento(item):
             jogos.append(sorted(jogoFechamento))
         fd.close()
 
-    response = { 'Total': len(jogos), 'Jogos': jogos }
+    response = {'Total': len(jogos), 'Jogos': jogos}
 
     return response

@@ -7,6 +7,7 @@ from app.main.lotofacil.lotofacil_controller import api as lotofacil_ns
 from app.main.lotomania.lotomania_controller import api as lotomania_ns
 from app.main.megasena.megasena_controller import api as megasena_ns
 from app.main.quina.quina_controller import api as quina_ns
+from app.main.regras.regras_controller import api as regras_ns
 
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
@@ -39,3 +40,4 @@ api.add_namespace(lotofacil_ns, path='/lotofacil')
 api.add_namespace(lotomania_ns, path='/lotomania')
 api.add_namespace(megasena_ns, path='/megasena')
 api.add_namespace(quina_ns, path='/quina')
+api.add_namespace(regras_ns, path='/regras')

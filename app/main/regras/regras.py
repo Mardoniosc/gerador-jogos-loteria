@@ -33,6 +33,8 @@ megasenaAleatorio = Regra(
 megasenaDuque = Regra('MegaSena Duque',
                       '* 1 Numero baixo (1 e 10) * 1 Numero alto (51 e 60) * 2 Numero de trinta (30 e 39) * 2 Numero de aleatorios')
 
+regrasFechamento = Regra('Fechamento', 'total_numeros_fechamento: numero total que vai ser feito o fechamento do jogo | para_acertar: o numero de dezenas que deseja acertar no jogo | geracao_numeros: o tipo de escolha dos numeros que formaram o fechamento')
+
 
 def regras():
     listaRegrasAleatorios = []
@@ -46,7 +48,8 @@ def regras():
         'Aleatorios': listaRegrasAleatorios,
         'Mega Sena Duque': megasenaDuque.regraObjeto(),
         'Lotofacil Não Sorteado': lotofacilNaoSorteado.regraObjeto(),
-        'lotofacil Base Ultimo': lotofacilBaseUltimo.regraObjeto(),
+        'Lotofácil Base Ultimo': lotofacilBaseUltimo.regraObjeto(),
+        'Fechamento': regrasFechamento.regraObjeto(),
     }}
     return regras_json
 

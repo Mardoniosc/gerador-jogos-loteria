@@ -77,6 +77,8 @@ def regras_lotomania():
 def regras_megasena():
     regras = []
     regras.append(megasenaAleatorio.regraObjeto())
+    regras.append(megasenaDuque.regraObjeto())
+
     regras_json = {'Megasena': regras}
     return regras_json
 

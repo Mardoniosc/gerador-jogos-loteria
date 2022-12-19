@@ -30,7 +30,7 @@ quinaAleatorio = Regra(
 # MEGA SENA
 megasenaAleatorio = Regra(
     'MegaSena Aleatória', 'Números sorteados gerados através do algoritimo(random.sample)')
-megasenaDuque = Regra('MegaSena Aleatória',
+megasenaDuque = Regra('MegaSena Duque',
                       '* 1 Numero baixo (1 e 10) * 1 Numero alto (51 e 60) * 2 Numero de trinta (30 e 39) * 2 Numero de aleatorios')
 
 

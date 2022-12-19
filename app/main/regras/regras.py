@@ -91,3 +91,9 @@ def regras_quina():
     regras.append(quinaAleatorio.regraObjeto())
     regras_json = {'Quina': regras}
     return regras_json
+
+def regras_fechamento():
+    regras = []
+    regras.append(regrasFechamento.regraObjeto())
+    regras_json = {'Fechamento': regras}
+    return regras_json

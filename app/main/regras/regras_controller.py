@@ -1,5 +1,5 @@
 from flask_restplus import Resource, Namespace
-from app.main.regras.regras import regras, regras_duplasena, regras_lotofacil, regras_lotomania, regras_megasena, regras_quina
+from app.main.regras.regras import regras, regras_duplasena, regras_lotofacil, regras_lotomania, regras_megasena, regras_quina, regras_fechamento
 
 api = Namespace('Regras', description='Regras para geração de jogos')
 
@@ -44,3 +44,10 @@ class RegrasQuinaController(Resource):
     @api.response(200, "Documento De Regras gerado com sucesso!")
     def get(self):
         return regras_quina(), 200
+
+
+@api.route('/fechamento')
+class RegrasFechamentoController(Resource):
+    @api.response(200, "Documento De Regras gerado com sucesso!")
+    def get(self):
+        return regras_fechamento(), 200

@@ -20,8 +20,7 @@ class MegasenaDuqueController(Resource):
 
 
 argumentos = api.parser()
-argumentos.add_argument('total_numeros_fechamento', choices=[
-                        12], default=12, required=True)
+argumentos.add_argument('total_numeros_fechamento', choices=[12,20], default=12, required=True)
 argumentos.add_argument('para_acertar', choices=[
                         4, 5, 6], default=4, required=True)
 argumentos.add_argument('geracao_numeros', choices=[

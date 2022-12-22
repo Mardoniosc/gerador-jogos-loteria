@@ -16,6 +16,10 @@ def getResultado(loteria, concurso):
 def resultado(argumentos):
     concurso = argumentos.get('concurso')
     loteria = argumentos.get('loteria')
+
+    if(concurso == '0'):
+        concurso = 'latest'
+
     numeros = list(map(int, argumentos.get('numeros_jogados').split(",")))
 
     resultado = getResultado(loteria, concurso)
@@ -27,6 +31,7 @@ def resultado(argumentos):
     numeros_acertos = str(acertos_).replace('{', '').replace('}', '')
 
     response = {
+        'concurso' : resultado['concurso'],
         'Quantidade de Acertos': acertos,
         'Números acertos': numeros_acertos,
         'Dezenas Sorteadas': dezenas_sorteadas,

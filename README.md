@@ -1,6 +1,10 @@
 # API GERAÇÃO DE JOGOS
 Api publica desenvolvida para geração de jogos de forma mais inteligente
 
+### Link Documentação
+
+https://api-jogos.servicosmsc.com.br
+
 ## DESENVOLVIMENTO / DÍSPONIVEL
 
 ### JOGOS ALEATORIOS

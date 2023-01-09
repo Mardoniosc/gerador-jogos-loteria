@@ -30,7 +30,10 @@ def resultado(argumentos):
     acertos = len(acertos_)
     numeros_acertos = str(acertos_).replace('{', '').replace('}', '')
 
+    print(resultado)
+
     response = {
+        'Data Sorteio' : resultado['data'],
         'concurso' : resultado['concurso'],
         'Quantidade de Acertos': acertos,
         'Números acertos': numeros_acertos,

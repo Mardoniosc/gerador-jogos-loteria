@@ -14,7 +14,7 @@ argumentos.add_argument('numeros_jogados', type=str,
 
 @api.route('/valida-resultado')
 class ResultadoAleatorioController(Resource):
-    @api.response(200, "JOGO GERADO COM SUCESSO")
+    @api.response(200, "Econtrado resultado")
     @api.expect(argumentos)
     def get(self):
         response = resultado(request.args)

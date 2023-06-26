@@ -1,6 +1,8 @@
 from flask import Flask, Blueprint, url_for
 from flask_restplus import Api
+from flask_cors import CORS, cross_origin
 from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 from app.main.duplasena.duplasena_controller import api as duplasena_ns
 from app.main.lotofacil.lotofacil_controller import api as lotofacil_ns
@@ -11,6 +13,7 @@ from app.main.regras.regras_controller import api as regras_ns
 from app.main.resultado.resultado_controller import api as resultado_ns
 
 app = Flask(__name__)
+CORS(app)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 blueprint = Blueprint('api', __name__)
 app.register_blueprint(blueprint)

@@ -1,6 +1,3 @@
-import collections
-from collections import abc
-collections.MutableMapping = abc.MutableMapping
 from app import app
 
 if __name__ == '__main__':

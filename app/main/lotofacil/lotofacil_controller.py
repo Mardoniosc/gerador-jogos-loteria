@@ -24,7 +24,7 @@ class LotofacilUltimoController(Resource):
 
 argumentos = api.parser()
 argumentos.add_argument('total_numeros_fechamento', choices=[16,17,18,19,20,21,22], default=20, required=True)
-argumentos.add_argument('para_acertar', choices=[11,12,13,14,15], default=14, required=True)
+argumentos.add_argument('para_acertar', choices=[11,12,13,14,15], default=11, required=True)
 argumentos.add_argument('acertando', choices=[14,15], default=15, required=True, dest='Se acertar esse total dentro do numero total de fechamento')
 argumentos.add_argument('geracao_numeros', choices=['ALEATORIO', 'ESCOLHER_NUMEROS'], required=True, dest='Tipos de números para fechamento', default='ALEATORIO')
 argumentos.add_argument('numeros_fechamento', type=str, dest='Informar os numeros separados por virgula', default='1,2,3')

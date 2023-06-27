@@ -68,6 +68,7 @@ def fechamento(item):
     total = item.get('total_numeros_fechamento')
     numeros = item.get('numeros_fechamento')
     para_acertar = item.get('para_acertar')
+    acertando = item.get('acertando')
 
     if (tipo == 'ESCOLHER_NUMEROS'):
         numeros = list(map(int, numeros.split(",")))
@@ -81,7 +82,7 @@ def fechamento(item):
 
     jogos = []
     arquivoFechamento = 'app/assets/lotofacil/' + \
-        total + '-' + para_acertar + 'SE15.txt'
+        total + '-' + para_acertar + 'SE' + acertando + '.txt'
 
     with open(arquivoFechamento, 'r') as fd:
         for x in fd:

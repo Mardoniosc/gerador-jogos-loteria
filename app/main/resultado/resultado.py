@@ -1,7 +1,7 @@
 from random import sample
 import requests
 
-API_URL = 'https://api-loteria.servicosmsc.com.br/api'
+API_URL = 'https://loteriascaixa-api.herokuapp.com/api'
 
 
 def getResultado(loteria, concurso):

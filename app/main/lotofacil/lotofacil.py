@@ -2,7 +2,7 @@ from random import sample
 import requests
 from app.utils.auxFunc import resultado_lista_inteiro, compara_resultado, valida_sequencia
 
-API_URL = 'https://api-loteria.servicosmsc.com.br/api/lotofacil'
+API_URL = 'https://loteriascaixa-api.herokuapp.com/api/lotofacil'
 
 
 def lotofacil_aleatorio():
